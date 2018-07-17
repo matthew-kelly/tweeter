@@ -1,28 +1,33 @@
 .new-tweet {
-    margin: auto;
-    margin-left: 2em;
-    margin-right: 2em;
-    padding: 10px;
-    background-color: #eee;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  margin: auto;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .new-tweet h2 {
-    border-bottom: 1px solid black;
-    margin-top: 0;
+  border-bottom: 1px solid black;
+  margin-top: 0;
 }
 
 .new-tweet textarea {
-    width: 100%;
-    padding: 5px;
-    resize: none;
+  width: 100%;
+  padding: 5px;
+  resize: none;
+  height: 75px;
 }
 
 .new-tweet .counter {
-    float: right;
-    font-style: italic;
-    line-height: 30px;
-    padding-right: 0.7em;
-    font-size: 0.85em;
+  float: right;
+  font-style: italic;
+  line-height: 30px;
+  padding-right: 0.7em;
+  font-size: 0.85em;
+}
+
+.new-tweet .overCharLength {
+  color: red;
 }
