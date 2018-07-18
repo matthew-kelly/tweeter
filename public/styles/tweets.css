@@ -1,5 +1,5 @@
 article.tweet {
-  opacity: 0.7;
+  opacity: 0.6;
   margin: auto;
   margin-left: 2em;
   margin-right: 2em;
@@ -73,9 +73,9 @@ article.tweet footer div.icons.invisible {
   visibility: hidden;
 }
 
-article.tweet footer div.icons i.fa-font-awesome-flag:hover,
-article.tweet footer div.icons i.fa-retweet:hover,
-article.tweet footer div.icons i.fa-heart:hover {
+article.tweet.active footer div.icons i.fa-font-awesome-flag:hover,
+article.tweet.active footer div.icons i.fa-retweet:hover,
+article.tweet.active footer div.icons i.fa-heart:hover {
   color: #007462;
 }
 

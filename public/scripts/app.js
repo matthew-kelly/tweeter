@@ -14,16 +14,19 @@ $(document).ready(function () {
     $.ajax({
       method: "POST",
       url: "/tweets",
-      data: $("form").serialize()
+      data: $(this).serialize(),
+      success: function () {
+        $tweetText.val("");
+        $("#tweets-section").empty();
+        loadTweets();
+      }
     });
-    $tweetText.val("");
   });
 
   function renderTweets(tweets) {
-    for (let i = 0; i < tweets.length; i++) {
-      let newTweet = createTweetElement(tweets[i]);
-      $("#tweets-section").append(newTweet);
-    }
+    tweets.forEach(function (tweet) {
+      $("#tweets-section").prepend(createTweetElement(tweet));
+    })
   };
 
   function createTweetElement(tweetObj) {
@@ -62,13 +65,13 @@ $(document).ready(function () {
 
   function loadTweets() {
     $.ajax({
-      method: "GET",
-      url: "/tweets",
-      dataType: "json",
-      success: function (result) {
-        renderTweets(result);
-      }
-    })
+        method: "GET",
+        url: "/tweets",
+        dataType: "json",
+        success: function (tweets) {
+          renderTweets(tweets);
+        }
+      })
   }
 
   loadTweets();
