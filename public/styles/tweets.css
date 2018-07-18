@@ -1,9 +1,6 @@
 article.tweet {
-  opacity: 0.6;
-  margin: auto;
-  margin-left: 2em;
-  margin-right: 2em;
-  margin-top: 2em;
+  opacity: 0.7;
+  margin: 1em 2em auto;
   background-color: #fff;
   color: #2a4d43;
   border: 1px solid #eee;
@@ -11,12 +8,17 @@ article.tweet {
   transition: 0.1s linear all;
 }
 
+article.tweet:hover {
+  opacity: 1;
+  border: 1px solid #ccc;
+}
+
 article.tweet header {
   background-color: #eee;
   padding: 10px;
   height: 70px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 article.tweet header img {
@@ -60,26 +62,19 @@ article.tweet footer div.icons {
   color: #79cec1;
 }
 
-article.tweet footer div.icons i{
+article.tweet footer div.icons i {
   padding: 0 5px;
   transition: 0.1s linear all;
 }
 
-article.tweet.active footer div.icons.visible {
+article.tweet:hover footer div.icons {
   visibility: visible;
 }
 
-article.tweet footer div.icons.invisible {
+article.tweet footer div.icons {
   visibility: hidden;
 }
 
-article.tweet.active footer div.icons i.fa-font-awesome-flag:hover,
-article.tweet.active footer div.icons i.fa-retweet:hover,
-article.tweet.active footer div.icons i.fa-heart:hover {
+article.tweet footer div.icons i:hover{
   color: #007462;
-}
-
-article.tweet:hover {
-  opacity: 1;
-  border: 1px solid #ccc;
 }

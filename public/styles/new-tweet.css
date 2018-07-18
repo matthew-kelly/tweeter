@@ -1,7 +1,5 @@
 .new-tweet {
-  margin: auto;
-  margin-left: 2em;
-  margin-right: 2em;
+  margin: auto 2em;
   padding: 10px;
   background-color: #eee;
   border: 1px solid #ddd;

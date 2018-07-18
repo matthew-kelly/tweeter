@@ -19,6 +19,10 @@ $(document).ready(function () {
         $tweetText.val("");
         $("#tweets-section").empty();
         loadTweets();
+      },
+      error: function (event, err) {
+        console.log(err)
+        return;
       }
     });
   });
@@ -46,7 +50,7 @@ $(document).ready(function () {
     // FOOTER
     let $footer = $("<footer>");
     $footer.append($("<p>").text(moment(tweetObj.created_at).fromNow()));
-    //     ICONS
+    // - ICONS
     let $icons = $("<div class='icons invisible'></div>")
     $icons.append($("<i>", {
       "class": "fab fa-font-awesome-flag"
@@ -65,13 +69,17 @@ $(document).ready(function () {
 
   function loadTweets() {
     $.ajax({
-        method: "GET",
-        url: "/tweets",
-        dataType: "json",
-        success: function (tweets) {
-          renderTweets(tweets);
-        }
-      })
+      method: "GET",
+      url: "/tweets",
+      dataType: "json",
+      success: function (tweets) {
+        renderTweets(tweets);
+      },
+      error: function (event, err) {
+        console.log(err)
+        return;
+      }
+    })
   }
 
   loadTweets();

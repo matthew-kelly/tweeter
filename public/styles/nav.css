@@ -1,23 +1,55 @@
 #nav-bar {
   position: fixed;
   top: 0;
+  padding: 0 2em;
   height: 80px;
+  width: 100%;
   background-color: #00a087;
   color: #e8fdff;
-  padding: 0 2em;
-  width: 100%;
   z-index: 9999;
+  display: flex;
+  justify-content: space-between;
 }
 
-#nav-bar .logo {
+#nav-bar div.nav-logo img {
   width: 80px;
   height: 80px;
   float: left;
 }
 
-#nav-bar .header {
+#nav-bar div.nav-logo span {
   padding-left: 10px;
   font-size: 2rem;
   line-height: 80px;
   float: left;
+}
+
+#nav-bar div.nav-buttons button.nav-tweet-slider {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  margin: 10px;
+  padding: 0 10px;
+  height: 60px;
+}
+
+#nav-bar div.nav-buttons button.nav-tweet-slider:focus {
+  outline: none;
+} 
+
+#nav-bar div.nav-buttons button.nav-tweet-slider:hover {
+  background-color: #d3fff8;
+  color: #256e62;
+}
+
+#nav-bar div.nav-buttons button.nav-tweet-slider i {
+  padding-right: 5px;
+  font-size: 1.25em;
+}
+
+#nav-bar div.nav-buttons button.nav-tweet-slider p {
+  margin: 0;
+  font-size: 1.25em;
 }
