@@ -3,6 +3,7 @@ article.tweet {
   margin: auto;
   margin-left: 2em;
   margin-right: 2em;
+  margin-top: 2em;
   background-color: #fff;
   color: #2a4d43;
   border: 1px solid #eee;
@@ -20,6 +21,8 @@ article.tweet header {
 
 article.tweet header img {
   border-radius: 5px;
+  height: 50px;
+  width: 50px;
   float: left;
 }
 
@@ -54,12 +57,20 @@ article.tweet footer p {
 }
 
 article.tweet footer div.icons {
-  visibility: hidden;
-  color: #3faf9e;
+  color: #79cec1;
 }
 
 article.tweet footer div.icons i{
+  padding: 0 5px;
   transition: 0.1s linear all;
+}
+
+article.tweet.active footer div.icons.visible {
+  visibility: visible;
+}
+
+article.tweet footer div.icons.invisible {
+  visibility: hidden;
 }
 
 article.tweet footer div.icons i.fa-font-awesome-flag:hover,

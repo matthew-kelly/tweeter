@@ -1,7 +1,13 @@
 $(document).ready(function () {
   $("#tweets-section .tweet").hover(function () {
-    $("#tweets-section .tweet footer div.icons").css("visibility", "visible");
+    $(this).addClass("active");
   }, function () {
-    $("#tweets-section .tweet footer div.icons").css("visibility", "hidden");
+    $(this).removeClass("active");
+  });
+
+  $("#tweets-section .tweet").hover(function () {
+    $("#tweets-section .tweet.active footer div.icons").removeClass("invisible").addClass("visible");
+  }, function () {
+    $("#tweets-section .tweet footer div.icons").removeClass("visible").addClass("invisible");
   });
 });
