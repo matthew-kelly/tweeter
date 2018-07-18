@@ -2,13 +2,14 @@ $(document).ready(function () {
 
   $("form").submit(function (event) {
     event.preventDefault();
+    $(".error-message").slideUp(0);
     let $form = $(this);
     let $tweetText = $form.children("textarea");
     if ($tweetText.val().length === 0) {
-      alert("Tweet area is empty!");
+      $(".error-message").text("Tweet area is empty!").slideDown(0);
       return false;
     } else if ($tweetText.val().length > 140) {
-      alert("Tweet cannot be longer than 140 characters!");
+      $(".error-message").text("Tweet cannot be longer than 140 characters!").slideDown(0);
       return false;
     }
     $.ajax({
@@ -16,6 +17,7 @@ $(document).ready(function () {
       url: "/tweets",
       data: $(this).serialize(),
       success: function () {
+        $(".error-message").slideUp(0);
         $tweetText.val("");
         $("#tweets-section").empty();
         loadTweets();
