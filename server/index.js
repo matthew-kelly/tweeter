@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
+// connect to MongoDB
 MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {
     console.error(`Failed to connect: ${MONGODB_URI}`);
@@ -22,7 +23,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   const DataHelpers = require("./lib/data-helpers.js")(db);
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
   app.use("/tweets", tweetsRoutes);
-  // db.close();
 });
 
 app.listen(PORT, () => {

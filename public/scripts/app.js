@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
+  // on new tweet submit
   $("form").submit(function (event) {
     event.preventDefault();
-    $(".error-message").slideUp(0);
-    let $form = $(this);
-    let $tweetText = $form.children("textarea");
-    if ($tweetText.val().length === 0) {
+    $(".error-message").slideUp(0); // clear previous error message
+    let $tweetText = $(this).children("textarea");
+    if ($tweetText.val().length === 0) { // check for tweet errors
       $(".error-message").text("Tweet area is empty!").slideDown(0);
       return false;
     } else if ($tweetText.val().length > 140) {
@@ -17,10 +17,11 @@ $(document).ready(function () {
       url: "/tweets/",
       data: $(this).serialize(),
       success: function () {
-        $(".error-message").slideUp(0);
-        $tweetText.val("");
-        $("#tweets-section").empty();
-        $(".loading").slideDown(0);
+        $(".error-message").slideUp(0); // clear error message
+        $tweetText.val(""); // clear tweet textarea
+        $("#tweets-section").empty(); // clear old tweets
+        $(".loading").slideDown(0); // show loading gif
+        $(".new-tweet form .counter").text(140); // reset tweet length counter
         loadTweets();
       },
       error: function (event, err) {
@@ -86,5 +87,5 @@ $(document).ready(function () {
     })
   }
 
-  loadTweets();
+  loadTweets(); // populate page with tweets on initial load
 });

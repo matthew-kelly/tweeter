@@ -46,6 +46,7 @@ article.tweet header p {
 article.tweet>p {
   margin: 2em 0px;
   padding: 0 1em;
+  word-wrap: break-word; /* prevents tweets that consist of 140 uninterrupted characters from staying on one line */
 }
 
 article.tweet footer {

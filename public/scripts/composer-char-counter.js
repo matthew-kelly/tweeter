@@ -4,7 +4,7 @@ $(document).ready(function () {
   $(".new-tweet form textarea").on("keypress", function () {
     changeCounter(1);
   })
-  // delete
+  // backspace key
   $(".new-tweet form textarea").on("keydown", function () {
     changeCounter(0);
   })
@@ -12,12 +12,12 @@ $(document).ready(function () {
   function changeCounter(modifier) {
     const tweetTextArea = $(".new-tweet form textarea").val();
     const charCounter = $(".new-tweet form textarea").siblings(".counter");
-    if (event.key === "Backspace" && tweetTextArea.length > 0) {
+    if (event.key === "Backspace" && tweetTextArea.length > 0) { // add 1 to remaining tweet length if backspace key is hit
       charCounter.text(140 - tweetTextArea.length + 1);
     } else {
-      charCounter.text(140 - tweetTextArea.length - modifier);
+      charCounter.text(140 - tweetTextArea.length - modifier); // subtract 1 from remaining tweet length
     }
-    charLength(tweetTextArea.length);
+    charLength(tweetTextArea.length); // check if tweet is too long
   }
 
   function charLength(length) {
@@ -29,29 +29,4 @@ $(document).ready(function () {
     }
   }
 
-  // original code
-  // $(".new-tweet form textarea").on("keypress", function () {
-  //   const tweetTextArea = $(this).val();
-  //   const charCounter = $(this).siblings(".counter");
-  //   charCounter.text(140 - tweetTextArea.length - 1);
-  //   if (tweetTextArea.length >= 140) {
-  //     charCounter.addClass("overCharLength");
-  //   } else {
-  //     charCounter.removeClass("overCharLength");
-  //   }
-  // })
-
-  // // update counter for backspace
-  // $(".new-tweet form textarea").on("keydown", function (event) {
-  //   const tweetTextArea = $(this).val();
-  //   const charCounter = $(this).siblings(".counter");
-  //   if (event.key === "Backspace" && tweetTextArea.length > 0) {
-  //     charCounter.text(140 - tweetTextArea.length + 1);
-  //   }
-  //   if (tweetTextArea.length <= 141) {
-  //     charCounter.removeClass("overCharLength");
-  //   } else {
-  //     charCounter.addClass("overCharLength");
-  //   }
-  // })
 });
