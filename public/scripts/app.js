@@ -20,6 +20,7 @@ $(document).ready(function () {
         $(".error-message").slideUp(0);
         $tweetText.val("");
         $("#tweets-section").empty();
+        $(".loading").slideDown(0);
         loadTweets();
       },
       error: function (event, err) {
@@ -75,6 +76,7 @@ $(document).ready(function () {
       url: "/tweets",
       dataType: "json",
       success: function (tweets) {
+        $(".loading").slideUp(0);
         renderTweets(tweets);
       },
       error: function (event, err) {

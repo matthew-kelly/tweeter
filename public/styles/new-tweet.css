@@ -1,9 +1,12 @@
 .new-tweet {
-  margin: auto 2em;
+  margin: auto;
   padding: 10px;
+  width: 80%;
+  max-width: 600px;
   background-color: #eee;
   border: 1px solid #ddd;
   border-radius: 5px;
+  display: none;
 }
 
 .new-tweet h2 {
@@ -35,4 +38,11 @@
   text-align: center;
   display: none;
   margin-top: 5px;
+}
+
+@media only screen and (max-width:600px) {
+  .new-tweet {
+    width: 95%;
+    margin: 0.5em auto;
+  }
 }

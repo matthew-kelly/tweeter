@@ -1,6 +1,8 @@
 article.tweet {
   opacity: 0.7;
-  margin: 1em 2em auto;
+  margin: 1em auto auto;
+  width: 80%;
+  max-width: 600px;
   background-color: #fff;
   color: #2a4d43;
   border: 1px solid #eee;
@@ -75,6 +77,27 @@ article.tweet footer div.icons {
   visibility: hidden;
 }
 
-article.tweet footer div.icons i:hover{
+article.tweet footer div.icons i:hover {
   color: #007462;
+}
+
+section.loading {
+  text-align: center;
+  display: none;
+  padding: 2em;
+}
+
+section.loading img {
+  height: 75px;
+  width: 75px;
+}
+
+@media only screen and (max-width:600px) {
+  article.tweet {
+    margin: 0.5em auto;
+    width: 95%;
+  }
+  #tweets-section {
+    padding-top: 0.5em;
+  }
 }

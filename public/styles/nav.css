@@ -11,20 +11,23 @@
   justify-content: space-between;
 }
 
+#nav-bar .nav-logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
 #nav-bar div.nav-logo img {
   width: 80px;
   height: 80px;
-  float: left;
 }
 
 #nav-bar div.nav-logo span {
   padding-left: 10px;
   font-size: 2rem;
   line-height: 80px;
-  float: left;
 }
 
-#nav-bar div.nav-buttons button.nav-tweet-slider {
+#nav-bar div.nav-buttons button {
   display: flex;
   justify-content: space-between;
   border: 1px solid #000;
@@ -35,21 +38,77 @@
   height: 60px;
 }
 
-#nav-bar div.nav-buttons button.nav-tweet-slider:focus {
+#nav-bar div.nav-buttons button:focus {
   outline: none;
-} 
+}
 
-#nav-bar div.nav-buttons button.nav-tweet-slider:hover {
+#nav-bar div.nav-buttons button:hover {
   background-color: #d3fff8;
   color: #256e62;
 }
 
-#nav-bar div.nav-buttons button.nav-tweet-slider i {
+#nav-bar div.nav-buttons button i {
   padding-right: 5px;
   font-size: 1.25em;
 }
 
-#nav-bar div.nav-buttons button.nav-tweet-slider p {
+#nav-bar div.nav-buttons button p {
   margin: 0;
   font-size: 1.25em;
+}
+
+#nav-bar div.small-menu {
+  display: none;
+  float: right;
+}
+
+#nav-bar div.menu-list {
+  display: none;
+  width: 100%;
+  background-color: #eee;
+  clear: left;
+}
+
+@media only screen and (max-width:600px) {
+  #nav-bar {
+    padding: 0;
+  }
+  #nav-bar div.nav-buttons {
+    display: none;
+  }
+  #nav-bar div.small-menu {
+    display: block;
+    color: #000;
+    background-color: rgb(227, 255, 243);
+  }
+  #nav-bar div.small-menu i {
+    font-size: 3em;
+    line-height: 80px;
+    padding: 0 19px;
+  }
+  header div.menu-list ul {
+    padding: 0;
+    margin: 0;
+  }
+  header div.menu-list li {
+    list-style-type: none;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+    font-size: 2em;
+    height: 80px;
+  }
+  header div.menu-list li:first-of-type {
+    margin-top: 80px;
+  }
+  header div.menu-list i {
+    line-height: 80px;
+    padding: 0 20px;
+  }
+  header div.menu-list p {
+    margin: 0;
+    line-height: 80px;
+  }
 }

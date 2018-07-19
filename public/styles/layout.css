@@ -30,12 +30,24 @@ body {
  */
 
 main {
-  width: 450px;
+  width: 80%;
+  max-width: 1000px;
   background-color: #fff;
-  margin: 80px auto auto;
+  margin: auto;
   padding: 1em 0;
+  margin-top: 80px;
 }
 
 main p {
   margin: 0;
+}
+
+@media only screen and (max-width:600px) {
+  main {
+    width: 100%;
+    padding: 0.5em 0 0;
+  }
+  main.open-menu {
+    margin-top: 0;
+  }
 }
