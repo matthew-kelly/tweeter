@@ -14,7 +14,7 @@ $(document).ready(function () {
     }
     $.ajax({
       method: "POST",
-      url: "/tweets",
+      url: "/tweets/",
       data: $(this).serialize(),
       success: function () {
         $(".error-message").slideUp(0);
@@ -73,7 +73,7 @@ $(document).ready(function () {
   function loadTweets() {
     $.ajax({
       method: "GET",
-      url: "/tweets",
+      url: "/tweets/",
       dataType: "json",
       success: function (tweets) {
         $(".loading").slideUp(0);
