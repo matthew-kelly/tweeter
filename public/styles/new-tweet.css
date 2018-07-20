@@ -15,21 +15,47 @@
 
 .new-tweet textarea {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
   resize: none;
   height: 75px;
+  border: none;
+  border-radius: 10px;
 }
+
+.new-tweet textarea:focus {
+  outline: none;
+  border: 1px solid #ff8181;
+  padding: 9px;
+}
+
 
 .new-tweet .counter {
   float: right;
   font-style: italic;
-  line-height: 24px;
+  line-height: 40px;
   padding-right: 0.7em;
   font-size: 0.85em;
 }
 
-.new-tweet input {
+.new-tweet .submit{
+  font-family: "carter one", sans-serif;
+  font-size: 1.25em;
+  padding: 0px 10px;
+  color: white;
+  background-color: #ff8181;
+  border-radius: 10px;
+  border: 2px solid #ff6565;
   animation: animate-whale 0.75s infinite;
+  transition: 0.1s linear all;
+}
+
+.new-tweet .submit:focus {
+  outline: none;
+}
+
+.new-tweet .submit:hover {
+  background-color: #fd5d5d;
 }
 
 .new-tweet .overCharLength {

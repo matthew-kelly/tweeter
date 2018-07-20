@@ -26,5 +26,5 @@ $(document).ready(function () {
       counter.addClass("overCharLength");
     }
   }
-  
+
 });
