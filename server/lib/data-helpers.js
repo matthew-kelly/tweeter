@@ -11,9 +11,11 @@ module.exports = function makeDataHelpers(db) {
 
     // Get all tweets in `db`, sorted by newest first
     getTweets: function (callback) {
-      const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-      db.collection("tweets").find().sort(sortNewestFirst).toArray(callback);
-    }
 
+      db.collection("tweets").find().toArray(function (err, tweets) {
+        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
+        callback(null, tweets.sort(sortNewestFirst));
+      });
+    }
   };
 }

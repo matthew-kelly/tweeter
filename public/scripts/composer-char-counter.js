@@ -1,10 +1,9 @@
 $(document).ready(function () {
-
-  // text characters
+  // tweet characters
   $(".new-tweet form textarea").on("keypress", function () {
     changeCounter(1);
   })
-  // backspace key
+  // backspace key detection
   $(".new-tweet form textarea").on("keydown", function () {
     changeCounter(0);
   })
@@ -17,16 +16,15 @@ $(document).ready(function () {
     } else {
       charCounter.text(140 - tweetTextArea.length - modifier); // subtract 1 from remaining tweet length
     }
-    charLength(tweetTextArea.length); // check if tweet is too long
+    charLength(charCounter, charCounter.text()); // check if tweet is too long
   }
 
-  function charLength(length) {
-    const charCounter = $(".new-tweet form textarea").siblings(".counter");
-    if (length < 140) {
-      charCounter.removeClass("overCharLength");
+  function charLength(counter, length) {
+    if (length >= 0) {
+      counter.removeClass("overCharLength");
     } else {
-      charCounter.addClass("overCharLength");
+      counter.addClass("overCharLength");
     }
   }
-
+  
 });

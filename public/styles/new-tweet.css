@@ -1,7 +1,7 @@
 .new-tweet {
   margin: auto;
   padding: 10px;
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   background-color: #eee;
   border: 1px solid #ddd;
@@ -29,6 +29,10 @@
   font-size: 0.85em;
 }
 
+.new-tweet input {
+  animation: animate-whale 0.75s infinite;
+}
+
 .new-tweet .overCharLength {
   color: red;
 }
@@ -38,6 +42,24 @@
   text-align: center;
   display: none;
   margin-top: 5px;
+}
+
+@keyframes animate-whale {
+  0% {
+    cursor: url("../images/whale-gif/whale-moves-1.gif"), auto;
+  }
+  25% {
+    cursor: url("../images/whale-gif/whale-moves-2.gif"), auto;
+  }
+  50% {
+    cursor: url("../images/whale-gif/whale-moves-3.gif"), auto;
+  }
+  75% {
+    cursor: url("../images/whale-gif/whale-moves-2.gif"), auto;
+  }
+  100% {
+    cursor: url("../images/whale-gif/whale-moves-1.gif"), auto;
+  }
 }
 
 @media only screen and (max-width:600px) {
