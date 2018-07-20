@@ -4,5 +4,3 @@ node_modules/
 .vscode/
 
 mongo_example.js
-
-server/
