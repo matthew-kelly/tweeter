@@ -25,7 +25,6 @@ $(document).ready(function () {
   $(window).resize(function () {
     if ($(window).innerWidth > "600px") {
       $(".menu-list").slideUp(0);
-      $("section.new-tweet").slideUp(0);
       $("main.container").removeClass("open-menu");
     }
   })
