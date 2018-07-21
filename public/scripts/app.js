@@ -9,7 +9,8 @@ $(document).ready(function () {
   function createTweetElement(tweetObj) {
     // ARTICLE
     let $tweet = $("<article>", {
-      "class": "tweet"
+      "class": "tweet",
+      "id": tweetObj._id
     });
     $tweet.append($("<p>").text(tweetObj.content.text));
 
@@ -24,7 +25,7 @@ $(document).ready(function () {
     let $footer = $("<footer>");
     $footer.append($("<p>").text(moment(tweetObj.created_at).fromNow()));
     // - ICONS
-    let $icons = $("<div class='icons invisible'></div>")
+    let $icons = $("<div class='icons'></div>")
     $icons.append($("<i>", {
       "class": "fab fa-font-awesome-flag"
     }));
@@ -32,7 +33,10 @@ $(document).ready(function () {
       "class": "fas fa-retweet"
     }));
     $icons.append($("<i>", {
-      "class": "fas fa-heart"
+      "class": "fas fa-heart like"
+    }));
+    $icons.append($("<i>", {
+      "class": "fas fa-trash-alt delete"
     }));
     $icons.appendTo($footer);
     $footer.appendTo($tweet);
@@ -55,6 +59,25 @@ $(document).ready(function () {
       }
     })
   }
+
+  // on click delete icon
+  $("#tweets-section").on("click", "i.delete", function (event) {
+    const $tweetId = $(this).closest($("article")).attr("id");
+
+    $.ajax({
+      method: "DELETE",
+      url: "/tweets/delete/" + $tweetId,
+      success: function () {
+        $("#tweets-section").empty(); // clear old tweets
+        $(".loading").slideDown(0); // show loading gif
+        loadTweets();
+      },
+      error: function (event, err) {
+        console.log("Error on delete: ", err)
+        return;
+      }
+    });
+  })
 
   // on new tweet submit
   $(".submit").click(function (event) {
