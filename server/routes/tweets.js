@@ -33,6 +33,7 @@ module.exports = function (DataHelpers) {
       content: {
         text: req.body.text
       },
+      likes: 0,
       created_at: Date.now()
     };
 
@@ -47,34 +48,25 @@ module.exports = function (DataHelpers) {
     });
   });
 
-  // tweetsRoutes.delete("/:id", function(req, res) {
-  //   console.log(req.params.id);
-  //   if (!req.params.id) {
-  //     res.status(400).json({
-  //       error: 'invalid request: no data in POST body'
-  //     });
-  //     return;
-  //   }
-
-  //   const tweetId = req.params.id;
-  //   DataHelpers.deleteTweet(tweetId);
-  //   res.status(202).send();
-  //   // DataHelpers.deleteTweet(tweetId, (err) => {
-  //   //   if (err) {
-  //   //     res.status(500).json({
-  //   //       error: err.message
-  //   //     });
-  //   //   } else {
-  //   //     res.status(202).send();
-  //   //   }
-  //   // })
-  // });
-
   tweetsRoutes.delete("/delete/:id", function (req, res) {
-    // console.log(req.params.id);
-    const id = req.params.id;
-    DataHelpers.deleteTweet(id);
-    res.sendStatus(202);
+    if (!req.params.id) {
+      res.status(400).json({
+        error: 'invalid request: no data in POST body'
+      });
+      return;
+    }
+
+    const tweetId = req.params.id;
+
+    DataHelpers.deleteTweet(tweetId, (err) => {
+      if (err) {
+        res.status(500).json({
+          error: err.message
+        });
+      } else {
+        res.status(202).send();
+      }
+    })
   });
 
   return tweetsRoutes;

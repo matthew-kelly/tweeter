@@ -4,3 +4,7 @@ node_modules/
 .vscode/
 
 mongo_example.js
+
+app-likesprototype.js
+data-helpers-likesprototype.js
+tweets-likesprototype.js
