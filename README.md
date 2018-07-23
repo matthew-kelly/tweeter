@@ -1,8 +1,12 @@
-# Tweeter Project
+# Whale Tale Project
 
-Tweeter is a simple, single-page Twitter clone.
+Whale Tale is a fully responsive, single-page Twitter clone, built on a Node, Express, and MongoDB backend. Whale Tale allows users to submit tweets to a shared, persistent timeline, accessible at <whaletale.herokuapp.com>.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Final Product
+
+!["Screenshot of Desktop View"](https://github.com/matthew-kelly/tweeter/blob/master/docs/homepage-focus.jpeg)
+!["Screenshot of Mobile View (Compose Field Hidden)"](https://github.com/matthew-kelly/tweeter/blob/master/docs/mobile.jpeg)
+!["Screenshot of Mobile View"](https://github.com/matthew-kelly/tweeter/blob/master/docs/mobile-dropdown.jpeg)
 
 ## Getting Started
 
@@ -15,3 +19,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body Parser
+- Chance
+- Dotenv
+- md5
+- Moment
+- MongoDB
+- Heroku
